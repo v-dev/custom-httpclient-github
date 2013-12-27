@@ -1,14 +1,14 @@
-CustomHttpClient
+# CustomHttpClient #
 
 Wrapper around Apache httpclient using Builder pattern.
 
-Usage
+## Usage ##
 
 ````
-CustomHttpRequest req = new CustomHttpRequestImpl.Builder(HOST, GET_PATH).
-                                  addHeader("x-a-phone-number", MSISDN).
-                                  proxy(proxy).
-                                  build();
+CustomHttpRequest req = new CustomHttpRequestImpl.Builder(HOST, GET_PATH)
+    .addHeader("x-custom-header", "some_value")
+    .proxy(proxy)
+    .build();
 
 CustomHttpResponse response = req.submit();
 String rawRes = response.getRaw();
